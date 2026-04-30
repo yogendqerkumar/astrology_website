@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ज्योति आयुर्वेद — प्राचीन ज्ञान, आधुनिक समाधान</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Hindi:ital@0;1&family=Cinzel+Decorative:wght@400;700&family=Lato:wght@300;400;700&family=Noto+Sans+Devanagari:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --saffron: #E8621A;
+      --deep-saffron: #C44D0F;
+      --gold: #D4A017;
+      --gold-light: #F0C84A;
+      --maroon: #7B1F2E;
+      --cream: #FDF6E3;
+      --cream-dark: #F5E6C8;
+      --brown: #4A2C0A;
+      --green: #2D6A4F;
+      --green-light: #52B788;
+      --text-dark: #1A0A00;
+      --text-mid: #4A2C0A;
+      --white: #FFFFFF;
+      --shadow: 0 8px 40px rgba(200, 80, 15, 0.18);
+      --shadow-gold: 0 4px 20px rgba(212, 160, 23, 0.3);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans Devanagari', 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ── MANDALA BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(212,160,23,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      background: rgba(26, 10, 0, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 70px;
+    }
+
+    .nav-brand {
+      display: flex; align-items: center; gap: 12px;
+    }
+    .nav-logo {
+      font-size: 2.2rem;
+    }
+    .nav-title {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold);
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+    .nav-title span {
+      display: block;
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 25px;
+      font-weight: 600 !important;
+      transition: all 0.3s !important;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #1A0A00 0%, #2D0D05 40%, #0D1F0A 100%);
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+      padding-top: 70px;
+    }
+
+    .hero-mandala {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      opacity: 0.06;
+      animation: spin-slow 80s linear infinite;
+    }
+
+    @keyframes spin-slow { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+    .hero-glow {
+      position: absolute;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(232,98,26,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      top: 10%; right: 5%;
+      animation: pulse-glow 6s ease-in-out infinite;
+    }
+    .hero-glow2 {
+      position: absolute;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(212,160,23,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      bottom: 10%; left: 5%;
+      animation: pulse-glow 8s ease-in-out infinite reverse;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      align-items: center;
+    }
+
+    .hero-text .tag {
+      display: inline-block;
+      background: rgba(212, 160, 23, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease both;
+    }
+
+    .hero-hindi-title {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 3.8rem;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      animation: fadeInUp 0.9s ease 0.1s both;
+    }
+
+    .hero-hindi-title .highlight {
+      color: var(--gold);
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.2rem;
+      color: var(--saffron);
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.9s ease 0.2s both;
+    }
+
+    .hero-desc {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: rgba(253, 246, 227, 0.82);
+      font-size: 1.08rem;
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 0.9s ease 0.3s both;
+    }
+
+    .hero-desc .devanagari-accent {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeInUp 0.9s ease 0.4s both;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--saffron) 0%, var(--deep-saffron) 100%);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 50px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.35s;
+      box-shadow: 0 4px 20px rgba(232, 98, 26, 0.4);
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(232, 98, 26, 0.6);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-light);
+      border: 2px solid var(--gold);
+      padding: 12px 26px;
+      border-radius: 50px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--brown);
+    }
+
+    /* Hero image side */
+    .hero-image-side {
+      position: relative;
+      animation: fadeInRight 1s ease 0.3s both;
+    }
+
+    .hero-image-card {
+      background: linear-gradient(145deg, rgba(212,160,23,0.12), rgba(232,98,26,0.08));
+      border: 2px solid rgba(212,160,23,0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .hero-deity-icon {
+      font-size: 6rem;
+      margin-bottom: 1rem;
+      display: block;
+      filter: drop-shadow(0 0 20px rgba(212,160,23,0.6));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    .hero-verse {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      line-height: 1.8;
+      border-left: 3px solid var(--saffron);
+      padding-left: 1rem;
+      margin: 1.5rem 0;
+      text-align: left;
+    }
+
+    .hero-verse-trans {
+      color: rgba(253, 246, 227, 0.6);
+      font-size: 0.85rem;
+      text-align: left;
+      font-style: italic;
+    }
+
+    /* Stats strip */
+    .stats-strip {
+      background: linear-gradient(90deg, var(--maroon), var(--brown), var(--maroon));
+      border-top: 2px solid var(--gold);
+      border-bottom: 2px solid var(--gold);
+      padding: 1.5rem 2rem;
+    }
+    .stats-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 2rem;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: var(--cream-dark);
+      font-size: 0.9rem;
+    }
+
+    /* ── SECTION STYLES ── */
+    section { padding: 6rem 2rem; position: relative; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      color: white;
+      padding: 5px 18px;
+      border-radius: 25px;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .section-title {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 2.8rem;
+      color: var(--brown);
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
+    }
+
+    .section-title-en {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1rem;
+      color: var(--saffron);
+      margin-bottom: 1rem;
+    }
+
+    .section-line {
+      width: 80px; height: 4px;
+      background: linear-gradient(90deg, var(--saffron), var(--gold));
+      margin: 0 auto 1.5rem;
+      border-radius: 2px;
+    }
+
+    .section-desc {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: var(--text-mid);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--cream); }
+
+    .services-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 25px rgba(74,44,10,0.1);
+      border: 1px solid rgba(212,160,23,0.2);
+      transition: all 0.4s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--saffron), var(--gold));
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 50px rgba(232,98,26,0.2);
+      border-color: var(--saffron);
+    }
+
+    .service-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1.2rem;
+      display: block;
+      filter: drop-shadow(0 2px 8px rgba(212,160,23,0.4));
+    }
+
+    .service-title-hi {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 1.5rem;
+      color: var(--brown);
+      margin-bottom: 0.3rem;
+    }
+
+    .service-title-en {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.75rem;
+      color: var(--saffron);
+      margin-bottom: 1rem;
+    }
+
+    .service-desc {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: #666;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .service-btn {
+      background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 25px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .service-btn:hover {
+      box-shadow: 0 6px 20px rgba(232,98,26,0.4);
+      transform: translateY(-1px);
+    }
+    .service-btn.green {
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+    }
+    .service-btn.maroon {
+      background: linear-gradient(135deg, var(--maroon), #A0302E);
+    }
+
+    /* ── WHY US ── */
+    #about {
+      background: linear-gradient(160deg, #1A0A00 0%, #2D1206 100%);
+      color: white;
+    }
+
+    #about .section-title { color: var(--gold); }
+    #about .section-desc { color: rgba(255,255,255,0.7); }
+
+    .about-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-features { list-style: none; }
+    .about-features li {
+      display: flex; gap: 1rem; align-items: flex-start;
+      margin-bottom: 1.5rem;
+    }
+    .feature-icon-wrap {
+      width: 48px; height: 48px;
+      background: rgba(212,160,23,0.15);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .feature-content h4 {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+    }
+    .feature-content p {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .about-visual {
+      background: rgba(212,160,23,0.06);
+      border: 2px solid rgba(212,160,23,0.25);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+    }
+
+    .about-big-icon {
+      font-size: 8rem;
+      display: block;
+      filter: drop-shadow(0 0 30px rgba(212,160,23,0.5));
+      margin-bottom: 1.5rem;
+    }
+
+    .about-quote {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(26, 10, 0, 0.88);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-overlay.active { display: flex; }
+
+    .modal {
+      background: var(--cream);
+      border-radius: 24px;
+      width: 100%;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      border: 2px solid rgba(212,160,23,0.3);
+      animation: modalIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+    }
+
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.85) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .modal-header {
+      background: linear-gradient(135deg, var(--brown), var(--maroon));
+      padding: 1.8rem 2rem 1.4rem;
+      border-radius: 22px 22px 0 0;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .modal-title-hi {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 1.5rem;
+      color: var(--gold);
+    }
+    .modal-title-en {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    .modal-close {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: white;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .modal-close:hover { background: var(--saffron); }
+
+    .modal-body { padding: 2rem; }
+
+    .form-group { margin-bottom: 1.3rem; }
+
+    .form-group label {
+      display: block;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 0.88rem;
+      color: var(--brown);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 2px solid rgba(212,160,23,0.3);
+      border-radius: 12px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 0.95rem;
+      background: white;
+      color: var(--text-dark);
+      transition: border 0.3s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 3px rgba(232,98,26,0.12);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(232,98,26,0.4);
+    }
+    .form-submit.green { background: linear-gradient(135deg, var(--green), var(--green-light)); }
+    .form-submit.gold { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--brown); }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+    .success-icon { font-size: 4rem; display: block; margin-bottom: 1rem; }
+    .success-title {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      font-size: 1.5rem;
+      color: var(--green);
+      margin-bottom: 0.5rem;
+    }
+    .success-sub { color: #666; font-size: 0.9rem; }
+
+    /* ── CHAT SECTION ── */
+    .chat-container {
+      background: #f8f8f8;
+      border-radius: 16px;
+      border: 1px solid rgba(212,160,23,0.3);
+      overflow: hidden;
+    }
+    .chat-messages {
+      height: 280px;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    .chat-bubble {
+      margin-bottom: 0.8rem;
+      display: flex;
+    }
+    .chat-bubble.visitor { justify-content: flex-end; }
+    .chat-bubble.doctor { justify-content: flex-start; }
+    .bubble-inner {
+      max-width: 75%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .chat-bubble.visitor .bubble-inner {
+      background: linear-gradient(135deg, var(--saffron), var(--deep-saffron));
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+    .chat-bubble.doctor .bubble-inner {
+      background: white;
+      color: var(--text-dark);
+      border: 1px solid rgba(212,160,23,0.25);
+      border-bottom-left-radius: 4px;
+    }
+    .chat-input-row {
+      display: flex; gap: 0.5rem;
+      padding: 0.8rem;
+      border-top: 1px solid rgba(212,160,23,0.2);
+      background: white;
+    }
+    .chat-input-row input {
+      flex: 1;
+      border: 1px solid rgba(212,160,23,0.3);
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      outline: none;
+    }
+    .chat-send-btn {
+      background: var(--saffron);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--cream-dark); }
+    .testimonial-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem;
+    }
+    .testimonial-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(74,44,10,0.08);
+      border-left: 4px solid var(--saffron);
+    }
+    .testimonial-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; }
+    .testimonial-text {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    .testimonial-author {
+      display: flex; gap: 0.8rem; align-items: center;
+    }
+    .author-avatar {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .author-name {
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-weight: 600;
+      color: var(--brown);
+      font-size: 0.95rem;
+    }
+    .author-place {
+      color: #888;
+      font-size: 0.8rem;
+    }
+
+    /* ── SIGNUP SECTION ── */
+    #signup-section {
+      background: linear-gradient(135deg, var(--saffron) 0%, var(--deep-saffron) 50%, var(--maroon) 100%);
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    #signup-section .section-title { color: white; margin-bottom: 0.5rem; }
+    #signup-section .section-desc { color: rgba(255,255,255,0.85); margin-bottom: 2.5rem; }
+
+    .signup-form-inline {
+      max-width: 600px; margin: 0 auto;
+      display: flex; flex-direction: column; gap: 1rem;
+    }
+    .signup-form-inline input {
+      padding: 14px 20px;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1rem;
+      outline: none;
+    }
+    .signup-form-inline .btn-signup {
+      background: var(--brown);
+      color: var(--gold);
+      border: none;
+      padding: 14px;
+      border-radius: 12px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .signup-form-inline .btn-signup:hover { background: #2D0D05; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0D0500;
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 2rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem;
+      margin-bottom: 2rem;
+    }
+    .footer-brand-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .footer-brand-hi {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      color: var(--gold-light);
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .footer-desc {
+      font-family: 'Tiro Devanagari Hindi', serif;
+      line-height: 1.8;
+      font-size: 0.9rem;
+    }
+    .footer-heading {
+      font-family: 'Cinzel Decorative', serif;
+      color: var(--gold);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.6rem; }
+    .footer-links a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 0.88rem;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom {
+      border-top: 1px solid rgba(212,160,23,0.15);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+
+    /* ── FLOATING BTN ── */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 2rem; right: 2rem;
+      background: #25D366;
+      color: white;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+      z-index: 999;
+      text-decoration: none;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed;
+      bottom: 2rem; left: 50%; transform: translateX(-50%);
+      background: var(--brown);
+      color: var(--gold);
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      font-size: 0.95rem;
+      z-index: 9999;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s;
+      border: 1px solid var(--gold);
+    }
+    #toast.show { opacity: 1; }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-image-side { display: none; }
+      .hero-hindi-title { font-size: 2.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .testimonial-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-brand">
+    <span style="font-size:2rem;">🪔</span>
+    <div class="nav-title">
+      Jyoti Ayurveda
+      <span>ज्योति आयुर्वेद एवं ज्योतिष</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">सेवाएं</a></li>
+    <li><a href="#about">हमारे बारे में</a></li>
+    <li><a href="#testimonials">समीक्षाएं</a></li>
+    <li><a href="#" class="nav-cta" onclick="openModal('signup')">पंजीकरण करें</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <!-- SVG Mandala -->
+  <svg class="hero-mandala" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="90" fill="none" stroke="gold" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="70" fill="none" stroke="gold" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="50" fill="none" stroke="gold" stroke-width="0.5"/>
+    <circle cx="100" cy="100" r="30" fill="none" stroke="gold" stroke-width="0.5"/>
+    <line x1="100" y1="10" x2="100" y2="190" stroke="gold" stroke-width="0.3"/>
+    <line x1="10" y1="100" x2="190" y2="100" stroke="gold" stroke-width="0.3"/>
+    <line x1="27" y1="27" x2="173" y2="173" stroke="gold" stroke-width="0.3"/>
+    <line x1="173" y1="27" x2="27" y2="173" stroke="gold" stroke-width="0.3"/>
+    <polygon points="100,15 115,85 185,100 115,115 100,185 85,115 15,100 85,85" fill="none" stroke="gold" stroke-width="0.4"/>
+  </svg>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="tag">✦ प्राचीन भारतीय चिकित्सा परम्परा ✦</div>
+      <h1 class="hero-hindi-title">
+        आयुर्वेद एवं
+        <span class="highlight">ज्योतिष का</span>
+        संगम
+      </h1>
+      <p class="hero-subtitle">Where Ancient Wisdom Meets Modern Healing</p>
+      <p class="hero-desc">
+        <span class="devanagari-accent">हजारों वर्ष पुरानी देसी चिकित्सा पद्धति</span> और 
+        <span class="devanagari-accent">वैदिक ज्योतिष</span> के माध्यम से 
+        अपने जीवन की समस्याओं का समाधान पाएं। हमारे अनुभवी 
+        वैद्यजी और ज्योतिषाचार्य आपकी सेवा में सदा तत्पर हैं।
+        <br><br>
+        रोग हो या जीवन की उलझन — <span class="devanagari-accent">प्रकृति और ग्रहों में</span> हर समस्या का हल छुपा है।
+      </p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openModal('medicine')">
+          🌿 वैद्यजी से बात करें
+        </button>
+        <button class="btn-outline" onclick="openModal('astrology')">
+          🔮 ज्योतिष परामर्श
+        </button>
+      </div>
+    </div>
+
+    <div class="hero-image-side">
+      <div class="hero-image-card">
+        <span class="hero-deity-icon">🪷</span>
+        <div class="hero-verse">
+          "आयुर्वेदस्य मूलं सत्त्वं,<br>
+          रजस्तमश्च त्रिगुणात्मकम्।<br>
+          स्वास्थ्यं चतुर्विधं प्रोक्तं<br>
+          शरीरे मनसि आत्मनि।"
+        </div>
+        <p class="hero-verse-trans">
+          — आयुर्वेद का मूल सत्व, रजस और तमस — तीन गुणों में है।<br>
+          स्वास्थ्य चार प्रकार का — शरीर, मन, आत्मा और इन्द्रिय।
+        </p>
+        <div style="margin-top:1.5rem; display:flex; gap:1rem; justify-content:center;">
+          <div style="text-align:center;">
+            <span style="font-size:1.8rem;">🌙</span>
+            <div style="color:rgba(253,246,227,0.7); font-size:0.75rem; font-family:'Tiro Devanagari Hindi', serif;">ग्रह शांति</div>
+          </div>
+          <div style="text-align:center;">
+            <span style="font-size:1.8rem;">💎</span>
+            <div style="color:rgba(253,246,227,0.7); font-size:0.75rem; font-family:'Tiro Devanagari Hindi', serif;">रत्न परामर्श</div>
+          </div>
+          <div style="text-align:center;">
+            <span style="font-size:1.8rem;">🌿</span>
+            <div style="color:rgba(253,246,227,0.7); font-size:0.75rem; font-family:'Tiro Devanagari Hindi', serif;">देसी दवाएं</div>
+          </div>
+          <div style="text-align:center;">
+            <span style="font-size:1.8rem;">📿</span>
+            <div style="color:rgba(253,246,227,0.7); font-size:0.75rem; font-family:'Tiro Devanagari Hindi', serif;">यंत्र मंत्र</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <span class="stat-num" id="stat-visitors">5,000+</span>
+      <span class="stat-label">संतुष्ट रोगी</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">25+</span>
+      <span class="stat-label">वर्षों का अनुभव</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">100%</span>
+      <span class="stat-label">प्राकृतिक चिकित्सा</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">500+</span>
+      <span class="stat-label">जड़ी-बूटियाँ</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header">
+    <div class="section-tag">✦ हमारी सेवाएं ✦</div>
+    <h2 class="section-title">क्या चाहिए आपको?</h2>
+    <p class="section-title-en">Our Services</p>
+    <div class="section-line"></div>
+    <p class="section-desc">तीन प्रकार की सेवाएं — आपकी समस्या, आपकी जरूरत के अनुसार</p>
+  </div>
+
+  <div class="services-grid">
+    <!-- Medicine -->
+    <div class="service-card" onclick="openModal('medicine')">
+      <span class="service-icon">🌿</span>
+      <h3 class="service-title-hi">आयुर्वेदिक परामर्श</h3>
+      <p class="service-title-en">Ayurvedic Medicine Consultation</p>
+      <p class="service-desc">
+        अपनी बीमारी के बारे में वैद्यजी से सीधे बात करें। 
+        देसी जड़ी-बूटियों और प्राकृतिक उपायों से उपचार पाएं। 
+        कोई भी रोग, बड़ा हो या छोटा — आयुर्वेद में उपाय है।
+      </p>
+      <button class="service-btn green">🌿 वैद्यजी से पूछें</button>
+    </div>
+
+    <!-- Appointment -->
+    <div class="service-card" onclick="openModal('appointment')">
+      <span class="service-icon">📅</span>
+      <h3 class="service-title-hi">अपॉइंटमेंट बुक करें</h3>
+      <p class="service-title-en">Book Clinic Appointment</p>
+      <p class="service-desc">
+        हमारे क्लिनिक में आकर व्यक्तिगत जांच और उपचार करवाएं। 
+        अपना समय अभी बुक करें और लम्बी प्रतीक्षा से बचें। 
+        अनुभवी वैद्यजी आपकी सेवा में उपस्थित रहेंगे।
+      </p>
+      <button class="service-btn maroon">📅 अभी बुक करें</button>
+    </div>
+
+    <!-- Astrology -->
+    <div class="service-card" onclick="openModal('astrology')">
+      <span class="service-icon">🔮</span>
+      <h3 class="service-title-hi">ज्योतिष परामर्श</h3>
+      <p class="service-title-en">Astrology & Gemstone Guidance</p>
+      <p class="service-desc">
+        कुंडली विश्लेषण, रत्न परामर्श, ग्रह शांति के उपाय, 
+        वास्तु दोष निवारण और जीवन की हर समस्या का ज्योतिषीय समाधान। 
+        कौन-सा रत्न पहनें? यहाँ जानें।
+      </p>
+      <button class="service-btn">🔮 ज्योतिष से पूछें</button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / WHY US -->
+<section id="about">
+  <div class="section-header">
+    <div class="section-tag" style="background:rgba(212,160,23,0.15); color:var(--gold); border:1px solid var(--gold);">✦ हमारे बारे में ✦</div>
+    <h2 class="section-title">हम क्यों अलग हैं?</h2>
+    <p class="section-title-en">Why Choose Us</p>
+    <div class="section-line"></div>
+    <p class="section-desc">प्राचीन ज्ञान को आधुनिक सुविधा के साथ</p>
+  </div>
+
+  <div class="about-grid" style="max-width:1100px; margin:0 auto;">
+    <ul class="about-features">
+      <li>
+        <div class="feature-icon-wrap">🌱</div>
+        <div class="feature-content">
+          <h4>शुद्ध देसी दवाएं</h4>
+          <p>सभी दवाएं जड़ी-बूटियों से बनी, कोई रासायनिक मिश्रण नहीं। प्रकृति की शक्ति से उपचार।</p>
+        </div>
+      </li>
+      <li>
+        <div class="feature-icon-wrap">🎓</div>
+        <div class="feature-content">
+          <h4>अनुभवी वैद्य एवं ज्योतिषाचार्य</h4>
+          <p>25+ वर्षों के अनुभव के साथ हमारे विशेषज्ञ आपकी समस्या को गहराई से समझते हैं।</p>
+        </div>
+      </li>
+      <li>
+        <div class="feature-icon-wrap">🔒</div>
+        <div class="feature-content">
+          <h4>गोपनीयता की गारंटी</h4>
+          <p>आपकी व्यक्तिगत जानकारी और समस्या पूर्णतः गोपनीय रखी जाती है।</p>
+        </div>
+      </li>
+      <li>
+        <div class="feature-icon-wrap">💬</div>
+        <div class="feature-content">
+          <h4>हिंदी में परामर्श</h4>
+          <p>अपनी भाषा में, अपनी समस्या बताएं। हम सुनते हैं, समझते हैं, समाधान देते हैं।</p>
+        </div>
+      </li>
+      <li>
+        <div class="feature-icon-wrap">⚡</div>
+        <div class="feature-content">
+          <h4>त्वरित प्रतिक्रिया</h4>
+          <p>आपकी जिज्ञासा का उत्तर 24 घंटे के भीतर। ऑनलाइन और ऑफलाइन दोनों उपलब्ध।</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="about-visual">
+      <span class="about-big-icon">🕉️</span>
+      <p class="about-quote">
+        "स्वस्थस्य स्वास्थ्य रक्षणं,<br>
+        आतुरस्य विकार प्रशमनं च।"
+      </p>
+      <p style="color:rgba(255,255,255,0.5); font-size:0.85rem; margin-top:0.8rem; font-family:'Tiro Devanagari Hindi', serif;">
+        — स्वस्थ व्यक्ति के स्वास्थ्य की रक्षा करना<br>
+        और रोगी के रोग का नाश करना — यही आयुर्वेद का उद्देश्य है।
+      </p>
+      <div style="margin-top:2rem; display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        <div style="background:rgba(212,160,23,0.1); border:1px solid rgba(212,160,23,0.3); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:2rem;">💎</div>
+          <div style="color:var(--gold-light); font-family:'Tiro Devanagari Hindi', serif; font-size:0.9rem; margin-top:0.3rem;">नवरत्न परामर्श</div>
+        </div>
+        <div style="background:rgba(212,160,23,0.1); border:1px solid rgba(212,160,23,0.3); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:2rem;">📿</div>
+          <div style="color:var(--gold-light); font-family:'Tiro Devanagari Hindi', serif; font-size:0.9rem; margin-top:0.3rem;">कुंडली विश्लेषण</div>
+        </div>
+        <div style="background:rgba(212,160,23,0.1); border:1px solid rgba(212,160,23,0.3); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:2rem;">🌿</div>
+          <div style="color:var(--gold-light); font-family:'Tiro Devanagari Hindi', serif; font-size:0.9rem; margin-top:0.3rem;">पंचकर्म चिकित्सा</div>
+        </div>
+        <div style="background:rgba(212,160,23,0.1); border:1px solid rgba(212,160,23,0.3); border-radius:12px; padding:1rem; text-align:center;">
+          <div style="font-size:2rem;">🙏</div>
+          <div style="color:var(--gold-light); font-family:'Tiro Devanagari Hindi', serif; font-size:0.9rem; margin-top:0.3rem;">ग्रह शांति पूजा</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-header">
+    <div class="section-tag">✦ अनुभव ✦</div>
+    <h2 class="section-title">मरीज़ों की बात</h2>
+    <p class="section-title-en">Patient Testimonials</p>
+    <div class="section-line"></div>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"वैद्यजी ने मेरे घुटनों के दर्द का इलाज महज 3 महीने में कर दिया, जो अंग्रेजी दवाओं से 2 साल में नहीं हुआ था। देसी दवाएं सच में असरदार हैं।"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👨‍🦳</div>
+        <div>
+          <div class="author-name">रामनाथ शर्मा</div>
+          <div class="author-place">जयपुर, राजस्थान</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"ज्योतिषाचार्यजी ने बताया कि माणिक्य रत्न पहनूं — और सच में 6 महीने में नौकरी मिल गई। उनका ज्ञान अद्भुत है।"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👩</div>
+        <div>
+          <div class="author-name">प्रिया वर्मा</div>
+          <div class="author-place">लखनऊ, उत्तर प्रदेश</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"ऑनलाइन परामर्श की सुविधा बहुत अच्छी है। घर बैठे अपनी समस्या बताई, और अगले दिन ही विस्तृत उत्तर मिल गया।"</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">👨</div>
+        <div>
+          <div class="author-name">सुरेश पटेल</div>
+          <div class="author-place">अहमदाबाद, गुजरात</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNUP SECTION -->
+<section id="signup-section">
+  <h2 class="section-title">अभी पंजीकरण करें</h2>
+  <p class="section-desc">मुफ्त में जुड़ें और अपनी पहली परामर्श निःशुल्क पाएं</p>
+  <div class="signup-form-inline" id="inline-signup">
+    <input type="text" id="s-name" placeholder="आपका नाम" />
+    <input type="email" id="s-email" placeholder="ईमेल पता" />
+    <input type="tel" id="s-phone" placeholder="मोबाइल नंबर" />
+    <button class="btn-signup" onclick="inlineSignup()">🪔 पंजीकरण करें — निःशुल्क</button>
+  </div>
+  <p id="inline-success" style="display:none; color:white; font-family:'Tiro Devanagari Hindi', serif; font-size:1.2rem; margin-top:1rem;">✅ आपका स्वागत है! हम शीघ्र संपर्क करेंगे।</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-title">Jyoti Ayurveda</div>
+      <div class="footer-brand-hi">ज्योति आयुर्वेद एवं ज्योतिष केन्द्र</div>
+      <p class="footer-desc">प्राचीन भारतीय चिकित्सा और ज्योतिष परम्परा को जीवित रखते हुए, हम आपको प्रकृति की शक्ति से जोड़ते हैं।</p>
+    </div>
+    <div>
+      <div class="footer-heading">सेवाएं</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="openModal('medicine')">आयुर्वेदिक परामर्श</a></li>
+        <li><a href="#" onclick="openModal('appointment')">अपॉइंटमेंट</a></li>
+        <li><a href="#" onclick="openModal('astrology')">ज्योतिष परामर्श</a></li>
+        <li><a href="#">रत्न परामर्श</a></li>
+        <li><a href="#">कुंडली विश्लेषण</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">सम्पर्क</div>
+      <ul class="footer-links">
+        <li><a href="#">📍 नई दिल्ली, भारत</a></li>
+        <li><a href="#">📞 +91 98765 43210</a></li>
+        <li><a href="#">✉️ info@jyotiayurveda.in</a></li>
+        <li><a href="#">⏰ सोम–शनि: 9AM–7PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 ज्योति आयुर्वेद — सर्वाधिकार सुरक्षित।</span>
+    <span style="margin-left:1rem; color:rgba(212,160,23,0.6);">🪔 प्राचीन ज्ञान, आधुनिक समाधान 🪔</span>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="#" class="float-whatsapp" title="WhatsApp पर संपर्क करें">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- TOAST -->
+<div id="toast"></div>
+
+<!-- ═══════════════════════════ MODALS ═══════════════════════════ -->
+
+<!-- SIGNUP MODAL -->
+<div class="modal-overlay" id="modal-signup">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <div class="modal-title-hi">पंजीकरण करें</div>
+        <div class="modal-title-en">Create Your Account</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('signup')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="signup-form">
+        <div class="form-group">
+          <label>आपका पूरा नाम *</label>
+          <input type="text" id="su-name" placeholder="जैसे: राम कुमार शर्मा"/>
+        </div>
+        <div class="form-group">
+          <label>ईमेल पता *</label>
+          <input type="email" id="su-email" placeholder="yourname@email.com"/>
+        </div>
+        <div class="form-group">
+          <label>मोबाइल नंबर</label>
+          <input type="tel" id="su-phone" placeholder="+91 98765 43210"/>
+        </div>
+        <button class="form-submit" onclick="submitSignup()">🪔 पंजीकरण करें</button>
+      </div>
+      <div class="success-msg" id="signup-success">
+        <span class="success-icon">🙏</span>
+        <div class="success-title">स्वागत है!</div>
+        <p class="success-sub">आपका पंजीकरण सफल रहा। हम शीघ्र संपर्क करेंगे।</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MEDICINE MODAL -->
+<div class="modal-overlay" id="modal-medicine">
+  <div class="modal">
+    <div class="modal-header" style="background:linear-gradient(135deg, #1A4D2E, #2D6A4F);">
+      <div>
+        <div class="modal-title-hi">🌿 वैद्यजी से परामर्श</div>
+        <div class="modal-title-en">Ayurvedic Medicine Consultation</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('medicine')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="medicine-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>आपका नाम *</label>
+            <input type="text" id="med-name" placeholder="पूरा नाम"/>
+          </div>
+          <div class="form-group">
+            <label>मोबाइल नंबर</label>
+            <input type="tel" id="med-phone" placeholder="+91 XXXXX"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>ईमेल पता *</label>
+          <input type="email" id="med-email" placeholder="आपका ईमेल"/>
+        </div>
+        <div class="form-group">
+          <label>अपनी समस्या विस्तार से बताएं *</label>
+          <textarea id="med-query" placeholder="बीमारी का नाम, कितने समय से है, क्या लक्षण हैं — सब लिखें..."></textarea>
+        </div>
+        <button class="form-submit green" onclick="submitMedicine()">🌿 परामर्श भेजें</button>
+
+        <!-- Chat area (shown after submit) -->
+        <div id="med-chat-area" style="display:none; margin-top:1.5rem;">
+          <div style="font-family:'Tiro Devanagari Hindi', serif; color:var(--green); font-weight:600; margin-bottom:0.8rem;">💬 संदेश भेजें</div>
+          <div class="chat-container">
+            <div class="chat-messages" id="med-messages"></div>
+            <div class="chat-input-row">
+              <input type="text" id="med-chat-input" placeholder="अपना संदेश लिखें..."/>
+              <button class="chat-send-btn" onclick="sendMedMsg()">➤</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- APPOINTMENT MODAL -->
+<div class="modal-overlay" id="modal-appointment">
+  <div class="modal">
+    <div class="modal-header" style="background:linear-gradient(135deg, var(--maroon), #5A1020);">
+      <div>
+        <div class="modal-title-hi">📅 अपॉइंटमेंट बुक करें</div>
+        <div class="modal-title-en">Book Clinic Appointment</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('appointment')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="appointment-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>आपका नाम *</label>
+            <input type="text" id="appt-name" placeholder="पूरा नाम"/>
+          </div>
+          <div class="form-group">
+            <label>मोबाइल नंबर *</label>
+            <input type="tel" id="appt-phone" placeholder="+91 XXXXX"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>ईमेल पता *</label>
+          <input type="email" id="appt-email" placeholder="आपका ईमेल"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>तारीख चुनें *</label>
+            <input type="date" id="appt-date" min=""/>
+          </div>
+          <div class="form-group">
+            <label>समय चुनें *</label>
+            <select id="appt-time">
+              <option value="">-- समय --</option>
+              <option>09:00 AM</option><option>09:30 AM</option>
+              <option>10:00 AM</option><option>10:30 AM</option>
+              <option>11:00 AM</option><option>11:30 AM</option>
+              <option>12:00 PM</option><option>12:30 PM</option>
+              <option>02:00 PM</option><option>02:30 PM</option>
+              <option>03:00 PM</option><option>03:30 PM</option>
+              <option>04:00 PM</option><option>04:30 PM</option>
+              <option>05:00 PM</option><option>05:30 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>किस कारण से आना चाहते हैं?</label>
+          <textarea id="appt-reason" placeholder="बीमारी / समस्या संक्षेप में बताएं..." style="min-height:80px;"></textarea>
+        </div>
+        <button class="form-submit maroon" style="background:linear-gradient(135deg,var(--maroon),#A0302E);" onclick="submitAppointment()">📅 अपॉइंटमेंट बुक करें</button>
+      </div>
+      <div class="success-msg" id="appt-success">
+        <span class="success-icon">✅</span>
+        <div class="success-title">अपॉइंटमेंट बुक हो गया!</div>
+        <p class="success-sub">हम आपसे जल्द संपर्क करेंगे। समय पर पधारें।</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ASTROLOGY MODAL -->
+<div class="modal-overlay" id="modal-astrology">
+  <div class="modal">
+    <div class="modal-header" style="background:linear-gradient(135deg, #1A0A2E, #2D0D5A);">
+      <div>
+        <div class="modal-title-hi">🔮 ज्योतिष परामर्श</div>
+        <div class="modal-title-en">Astrology Consultation</div>
+      </div>
+      <button class="modal-close" onclick="closeModal('astrology')">✕</button>
+    </div>
+    <div class="modal-body">
+      <div id="astrology-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>आपका नाम *</label>
+            <input type="text" id="ast-name" placeholder="पूरा नाम"/>
+          </div>
+          <div class="form-group">
+            <label>मोबाइल</label>
+            <input type="tel" id="ast-phone" placeholder="+91 XXXXX"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>ईमेल *</label>
+          <input type="email" id="ast-email" placeholder="आपका ईमेल"/>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>जन्म तारीख</label>
+            <input type="date" id="ast-bdate"/>
+          </div>
+          <div class="form-group">
+            <label>जन्म समय</label>
+            <input type="time" id="ast-btime"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>जन्म स्थान</label>
+          <input type="text" id="ast-bplace" placeholder="शहर, राज्य"/>
+        </div>
+        <div class="form-group">
+          <label>समस्या का क्षेत्र</label>
+          <select id="ast-area">
+            <option value="general">सामान्य</option>
+            <option value="health">स्वास्थ्य</option>
+            <option value="career">नौकरी / व्यापार</option>
+            <option value="marriage">विवाह / प्रेम</option>
+            <option value="finance">धन / आर्थिक</option>
+            <option value="education">शिक्षा</option>
+            <option value="family">परिवार</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>अपनी जिज्ञासा बताएं *</label>
+          <textarea id="ast-query" placeholder="कौन-सा रत्न पहनूं? कुंडली में क्या दोष है? कोई भी प्रश्न..."></textarea>
+        </div>
+        <button class="form-submit gold" onclick="submitAstrology()">🔮 ज्योतिष से पूछें</button>
+      </div>
+      <div class="success-msg" id="ast-success">
+        <span class="success-icon">🌙</span>
+        <div class="success-title">जिज्ञासा दर्ज हो गई!</div>
+        <p class="success-sub">ज्योतिषाचार्यजी 24 घंटे में उत्तर देंगे।</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const API = 'http://localhost:5000/api';
+  let activeMedConsultId = null;
+
+  // Set min date for appointment
+  document.getElementById('appt-date').min = new Date().toISOString().split('T')[0];
+
+  // ── MODAL CONTROL ──
+  function openModal(type) {
+    document.getElementById(`modal-${type}`).classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(type) {
+    document.getElementById(`modal-${type}`).classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', e => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // ── TOAST ──
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 3500);
+  }
+
+  // ── SIGNUP ──
+  async function submitSignup() {
+    const name = document.getElementById('su-name').value.trim();
+    const email = document.getElementById('su-email').value.trim();
+    const phone = document.getElementById('su-phone').value.trim();
+    if (!name || !email) { showToast('कृपया नाम और ईमेल भरें।'); return; }
+    try {
+      const r = await fetch(`${API}/signup`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone}) });
+      const d = await r.json();
+      if (d.success) {
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('signup-success').style.display = 'block';
+      } else showToast(d.message);
+    } catch { showToast('सर्वर से कनेक्शन नहीं हो पाया।'); }
+  }
+
+  async function inlineSignup() {
+    const name = document.getElementById('s-name').value.trim();
+    const email = document.getElementById('s-email').value.trim();
+    const phone = document.getElementById('s-phone').value.trim();
+    if (!name || !email) { showToast('कृपया नाम और ईमेल भरें।'); return; }
+    try {
+      const r = await fetch(`${API}/signup`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone}) });
+      const d = await r.json();
+      if (d.success) {
+        document.getElementById('inline-signup').style.display = 'none';
+        document.getElementById('inline-success').style.display = 'block';
+      } else showToast(d.message);
+    } catch { showToast('सर्वर से कनेक्शन नहीं हो पाया।'); }
+  }
+
+  // ── MEDICINE ──
+  async function submitMedicine() {
+    const name = document.getElementById('med-name').value.trim();
+    const email = document.getElementById('med-email').value.trim();
+    const phone = document.getElementById('med-phone').value.trim();
+    const query = document.getElementById('med-query').value.trim();
+    if (!name || !email || !query) { showToast('कृपया सभी आवश्यक जानकारी भरें।'); return; }
+    try {
+      const r = await fetch(`${API}/consult/medicine`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone,query}) });
+      const d = await r.json();
+      if (d.success) {
+        activeMedConsultId = d.consultation_id;
+        showToast(d.message);
+        document.getElementById('med-chat-area').style.display = 'block';
+        addChatBubble('med-messages', 'visitor', query);
+        addChatBubble('med-messages', 'doctor', 'नमस्ते! आपकी समस्या दर्ज हो गई है। हमारे वैद्यजी शीघ्र उत्तर देंगे। 🙏');
+        document.getElementById('med-query').disabled = true;
+      } else showToast(d.message);
+    } catch { showToast('सर्वर से कनेक्शन नहीं हो पाया।'); }
+  }
+
+  async function sendMedMsg() {
+    const input = document.getElementById('med-chat-input');
+    const msg = input.value.trim();
+    if (!msg || !activeMedConsultId) return;
+    input.value = '';
+    addChatBubble('med-messages', 'visitor', msg);
+    try {
+      await fetch(`${API}/consult/${activeMedConsultId}/send`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({message:msg, sender:'visitor'}) });
+    } catch {}
+  }
+
+  document.getElementById('med-chat-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') sendMedMsg();
+  });
+
+  function addChatBubble(containerId, sender, msg) {
+    const c = document.getElementById(containerId);
+    const div = document.createElement('div');
+    div.className = `chat-bubble ${sender}`;
+    div.innerHTML = `<div class="bubble-inner">${msg}</div>`;
+    c.appendChild(div);
+    c.scrollTop = c.scrollHeight;
+  }
+
+  // ── APPOINTMENT ──
+  async function submitAppointment() {
+    const name = document.getElementById('appt-name').value.trim();
+    const email = document.getElementById('appt-email').value.trim();
+    const phone = document.getElementById('appt-phone').value.trim();
+    const date = document.getElementById('appt-date').value;
+    const time = document.getElementById('appt-time').value;
+    const reason = document.getElementById('appt-reason').value.trim();
+    if (!name || !email || !phone || !date || !time) { showToast('कृपया सभी आवश्यक जानकारी भरें।'); return; }
+    try {
+      const r = await fetch(`${API}/appointment`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone,date,time,reason}) });
+      const d = await r.json();
+      if (d.success) {
+        document.getElementById('appointment-form').style.display = 'none';
+        document.getElementById('appt-success').style.display = 'block';
+      } else showToast(d.message);
+    } catch { showToast('सर्वर से कनेक्शन नहीं हो पाया।'); }
+  }
+
+  // ── ASTROLOGY ──
+  async function submitAstrology() {
+    const name = document.getElementById('ast-name').value.trim();
+    const email = document.getElementById('ast-email').value.trim();
+    const phone = document.getElementById('ast-phone').value.trim();
+    const query = document.getElementById('ast-query').value.trim();
+    const birth_date = document.getElementById('ast-bdate').value;
+    const birth_time = document.getElementById('ast-btime').value;
+    const birth_place = document.getElementById('ast-bplace').value.trim();
+    const problem_area = document.getElementById('ast-area').value;
+    if (!name || !email || !query) { showToast('कृपया सभी आवश्यक जानकारी भरें।'); return; }
+    try {
+      const r = await fetch(`${API}/consult/astrology`, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({name,email,phone,query,birth_date,birth_time,birth_place,problem_area}) });
+      const d = await r.json();
+      if (d.success) {
+        document.getElementById('astrology-form').style.display = 'none';
+        document.getElementById('ast-success').style.display = 'block';
+      } else showToast(d.message);
+    } catch { showToast('सर्वर से कनेक्शन नहीं हो पाया।'); }
+  }
+
+  // ── LOAD LIVE STATS ──
+  async function loadStats() {
+    try {
+      const r = await fetch(`${API}/stats`);
+      const d = await r.json();
+      if (d.visitors > 0) {
+        document.getElementById('stat-visitors').textContent = (d.visitors + 5000).toLocaleString('hi-IN') + '+';
+      }
+    } catch {}
+  }
+  loadStats();
+
+  // Scroll fade-in
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .testimonial-card, .about-features li').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
